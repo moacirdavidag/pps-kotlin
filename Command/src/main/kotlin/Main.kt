@@ -1,7 +1,14 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    val lampadaSala = LampadaInteligente("Lâmpada da Sala")
+    val lampadaBanheiro = LampadaInteligente("Lâmpada do Banheiro")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    val ligarLampadaSalaCommand = LampadaInteligenteCommand(lampadaSala)
+    val ligarLampadaBanheiroCommand = LampadaInteligenteCommand(lampadaBanheiro)
+    val casaInteligenteInvoker = CasaInteligenteInvoker()
+
+    casaInteligenteInvoker.adicionarComando("btn-1", ligarLampadaSalaCommand)
+    casaInteligenteInvoker.adicionarComando("luz-banheiro", ligarLampadaBanheiroCommand)
+    casaInteligenteInvoker.executarComando("btn-1")
+    casaInteligenteInvoker.desfazerComando("btn-1")
+    casaInteligenteInvoker.executarComando("luz-banheiro")
 }

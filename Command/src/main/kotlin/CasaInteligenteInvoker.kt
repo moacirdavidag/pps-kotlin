@@ -2,7 +2,7 @@ class CasaInteligenteInvoker {
     private var comandos: MutableMap<String, LampadaInteligenteCommand> = mutableMapOf()
 
     fun adicionarComando(id: String, comando: LampadaInteligenteCommand) {
-        this.comandos.set(id, comando)
+        this.comandos[id] = comando
     }
 
     fun executarComando(id: String) {

@@ -6,6 +6,10 @@ class LampadaInteligente {
         this.nome = nome
     }
 
+    fun getNome(): String {
+        return this.nome
+    }
+
     fun ligar(): Boolean {
         this.isLigada = true
         return isLigada

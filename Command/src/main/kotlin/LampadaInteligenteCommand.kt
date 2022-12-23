@@ -9,11 +9,11 @@ class LampadaInteligenteCommand : Command {
 
     override fun executar() {
         this.lampadaInteligente.ligar()
-        println("A lâmpada foi ligada!")
+        println("A ${this.lampadaInteligente.getNome()} foi ligada!")
     }
 
     override fun desfazer() {
         this.lampadaInteligente.desligar()
-        println("A lâmpada foi desligada!")
+        println("A ${this.lampadaInteligente.getNome()} foi desligada!")
     }
 }
