@@ -1,30 +1,32 @@
 class LampadaInteligente {
     private var isLigada: Boolean = false
-
     private var nome: String
+
     constructor(nome: String) {
         this.nome = nome
     }
 
-    fun getNome(): String {
-        return this.nome
+    fun estadoDaLampada() : String {
+        if(isLigada) {
+            return "Ligada"
+        } else {
+            return "Desligada"
+        }
     }
 
     fun ligar(): Boolean {
-        this.isLigada = true
+        if(!isLigada) {
+            this.isLigada = true
+        }
+        println("A ${this.nome} foi ligada!")
         return isLigada
     }
 
     fun desligar(): Boolean {
-        this.isLigada = false
+        if(!!isLigada) {
+            this.isLigada = false
+        }
+        println("A ${this.nome} foi desligada!")
         return isLigada
     }
-
-    fun getEstadoLampada() : String {
-        if(isLigada) {
-            return "Ligada"
-        }
-        return "Desligada"
-    }
-
 }

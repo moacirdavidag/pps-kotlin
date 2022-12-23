@@ -1,3 +1,3 @@
 
-rootProject.name = "Observer"
+rootProject.name = "ObserverExample"
 

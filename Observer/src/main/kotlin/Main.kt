@@ -1,13 +1,15 @@
-fun main() {
-    val jornalDeMarizopolis = JornalObservavel()
-    val assinanteMoacir = AssinanteObservador()
-    val assinanteFernanda = AssinanteObservador()
+fun main(args: Array<String>) {
+    var jornalDoBrasil = JornalObservable()
 
-    assinanteMoacir.nome = "Moacir"
-    assinanteFernanda.nome = "Fernanda"
+    var moacir = AssinanteObserver("Moacir")
+    var fernanda = AssinanteObserver("Fernanda")
+    var carlos = AssinanteObserver("Carlos")
 
-    jornalDeMarizopolis.adicionarObservadores(assinanteMoacir)
-    jornalDeMarizopolis.adicionarObservadores(assinanteFernanda)
-    jornalDeMarizopolis.adicionarNoticia("Marizópolis tem chuva de 60mm em 24h")
+    jornalDoBrasil.adicionarObservador(moacir)
+    jornalDoBrasil.adicionarObservador(fernanda)
+    jornalDoBrasil.adicionarObservador(carlos)
+
+    jornalDoBrasil.adicionarNoticia("Brasil sai da sexta posição em população mundial!")
+    jornalDoBrasil.adicionarNoticia("Brasil é o maior país da América Latina")
 
 }

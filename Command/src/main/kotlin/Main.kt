@@ -1,14 +1,20 @@
 fun main(args: Array<String>) {
-    val lampadaSala = LampadaInteligente("Lâmpada da Sala")
-    val lampadaBanheiro = LampadaInteligente("Lâmpada do Banheiro")
 
-    val ligarLampadaSalaCommand = LampadaInteligenteCommand(lampadaSala)
-    val ligarLampadaBanheiroCommand = LampadaInteligenteCommand(lampadaBanheiro)
-    val casaInteligenteInvoker = CasaInteligenteInvoker()
+    var lampadaDaSala = LampadaInteligente("Lâmpada da Sala")
+    var lampadaDoBanheiro = LampadaInteligente("Lâmpada do Banheiro")
 
-    casaInteligenteInvoker.adicionarComando("btn-1", ligarLampadaSalaCommand)
-    casaInteligenteInvoker.adicionarComando("luz-banheiro", ligarLampadaBanheiroCommand)
-    casaInteligenteInvoker.executarComando("btn-1")
-    casaInteligenteInvoker.desfazerComando("btn-1")
-    casaInteligenteInvoker.executarComando("luz-banheiro")
+    var ligarLampadaSalaCommand = LampadaInteligenteCommand(lampadaDaSala)
+    var ligarLampadaBanheiroCommand = LampadaInteligenteCommand(lampadaDoBanheiro)
+
+    var lampadaInteligenteInvoker = LampadaInteligenteInvoker()
+
+    lampadaInteligenteInvoker.adicionarComando("ligar-luz-sala", ligarLampadaSalaCommand)
+    lampadaInteligenteInvoker.adicionarComando("ligar-luz-banheiro", ligarLampadaBanheiroCommand)
+
+    lampadaInteligenteInvoker.executarComando("ligar-luz-sala")
+    lampadaInteligenteInvoker.desfazerComando("ligar-luz-sala")
+
+    lampadaInteligenteInvoker.executarComando("ligar-luz-banheiro")
+    lampadaInteligenteInvoker.desfazerComando("ligar-luz-banheiro")
+
 }

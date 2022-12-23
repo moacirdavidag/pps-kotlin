@@ -1,3 +1,3 @@
 
-rootProject.name = "Command"
+rootProject.name = "CommandExemplo"
 

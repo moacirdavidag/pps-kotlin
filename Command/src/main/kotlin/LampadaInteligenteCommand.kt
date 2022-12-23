@@ -1,19 +1,18 @@
-import Command as Command
+import Command as Command1
 
-class LampadaInteligenteCommand : Command {
-    private var lampadaInteligente: LampadaInteligente
+class LampadaInteligenteCommand : Command1 {
+
+    private var lampada: LampadaInteligente
 
     constructor(lampada: LampadaInteligente) {
-        this.lampadaInteligente = lampada
+        this.lampada = lampada
     }
 
     override fun executar() {
-        this.lampadaInteligente.ligar()
-        println("A ${this.lampadaInteligente.getNome()} foi ligada!")
+        this.lampada.ligar()
     }
 
     override fun desfazer() {
-        this.lampadaInteligente.desligar()
-        println("A ${this.lampadaInteligente.getNome()} foi desligada!")
+       this.lampada.desligar()
     }
 }
